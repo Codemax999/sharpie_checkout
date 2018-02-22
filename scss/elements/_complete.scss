@@ -1,0 +1,36 @@
+.complete {
+  @extend %complete-summary;
+  background: $shade-light; 
+  padding-bottom: 5px; 
+  position: absolute; 
+  z-index: 1;
+  @include flex(column, center, center);
+  @include mq(centerHeight) { height: 100vh; } 
+
+  .complete-details { 
+    height: 600px;
+    width: 300px; 
+    @include flex(column, center, center);
+    @include mq(medium) { width: 400px; }
+    @include mq(large) { width: 500px; }
+  }
+
+  .complete-header {
+    font-size: $font-extraLarge;
+    font-weight: 700;
+  }
+
+  h1 { align-self: flex-start; }
+
+  .summary-description h4 {
+    margin-bottom: 10px; 
+    margin-top: 15px; 
+  }
+
+  .summary-address {
+    align-self: flex-start; 
+    padding: 15px 0 25px 0;
+  }
+
+  .complete-icon { @include flex(row, center, center); }
+}

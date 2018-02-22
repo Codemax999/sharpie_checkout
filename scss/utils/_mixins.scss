@@ -1,0 +1,23 @@
+// flex
+@mixin flex($direction: row, $justify: flex-start, $align: flex-start) {
+  align-items: $align;
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+}
+
+// media query
+@mixin mq($size) {
+  @if $size == small {
+    @media (min-width: 300px) { @content; }
+  }
+  @else if $size == medium {
+    @media (min-width: 600px) { @content; }
+  }
+  @else if $size == large {
+    @media (min-width: 800px) { @content; }
+  }
+  @else if $size == centerHeight {
+    @media (min-height: 600px) { @content; }
+  }
+}

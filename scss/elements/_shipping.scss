@@ -1,0 +1,60 @@
+.shipping {
+  @extend %section-content;
+  background: $shade-medium;
+
+  h1 { @extend %section-title; }
+
+  form { 
+    margin-top: 15px; 
+    flex-wrap: wrap;
+    @include flex(row, flex-start, flex-start);
+
+    label {
+      color: $shade-details;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      width: 100%;
+    }
+
+    span {
+      color: $red;
+      font-size: $font-small;
+      font-weight: 400;
+      height: 15px;
+      text-align: flex-start;
+      width: 100%;
+    }
+
+    input, select {
+      background: $shade-placeholder-medium;
+      border: 1px solid $shade-placeholder-dark;
+      border-radius: 0;
+      height: 40px;
+      margin: 2px 0 10px 0;
+      width: 100%;
+    }
+
+    select { height: 44px; }
+
+    .input-medium {
+      width: 99%;
+      @include flex(row, space-between, flex-start);
+    }
+    .input-medium div {
+      display: flex;
+      flex-wrap: wrap;
+      width: 47%; 
+    }
+
+    .input-small {
+      width: 99%;
+      @include flex(row, space-between, center);
+    }
+    .input-small div {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .input-small div:nth-of-type(1), .input-small div:nth-of-type(3) { width: 33%; }
+    .input-small div:nth-of-type(2) { width: 27%; }
+  }
+}

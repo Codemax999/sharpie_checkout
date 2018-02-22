@@ -1,0 +1,79 @@
+// section content 
+%section-content {
+  padding: 0 10px 75px 10px;
+  width: calc(100% - 20px);
+  @include mq(medium) { width: calc(50% - 20px); }
+  @include mq(large) { width: calc(33.33% - 20px); }
+}
+
+// section titles
+%section-title {
+  color: $shade-heading;
+  font-weight: 400;
+  margin: 0 0 5px 0;
+  padding-top: 20px;
+}
+
+// complete summary 
+%complete-summary {
+  @extend %section-content; 
+  background: $shade-dark;
+  padding-bottom: 25px;
+  @include mq(medium) { width: calc(100% - 20px); } 
+
+  h1 { @extend %section-title; } 
+
+  .summary-description {  
+    margin-bottom: 0;
+    width: 100%;
+    @include flex(row, space-between, flex-start); 
+
+    div { 
+      width: 75%;
+      @include flex(row, space-between, flex-start); 
+    }
+
+    h4 { 
+      color: $shade-heading;
+      font-size: $font-medium;
+      font-weight: 400;
+      letter-spacing: 0.5px;
+    }
+
+    &:nth-of-type(2) h4 { 
+      color: $shade-details; 
+      margin-bottom: 0;
+    }
+    &:nth-of-type(3) h4 { 
+      font-weight: 700; 
+      margin-top: 10px;
+    }
+  }
+
+  hr { 
+    border: 1px solid $shade-placeholder-light; 
+    width: 100%;
+  }
+
+  .summary-address { 
+    padding: 15px 0 75px 0;
+
+    .summary-title { 
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    h4 { 
+      color: $shade-details;
+      font-size: $font-medium;
+      font-weight: 400;
+      margin: 5px;
+    }
+  }
+
+  .summary-address-local { 
+    @include flex; 
+
+    h4 { margin-top: 0; }
+  }
+}

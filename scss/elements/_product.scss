@@ -1,0 +1,77 @@
+.product {
+  @extend %section-content;
+  background: $shade-light;
+  @include flex(column, flex-start, flex-start);
+
+  h1 {
+    @extend %section-title;
+
+    &:nth-of-type(2) {
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      text-align: end;
+      width: 100%;
+    }
+  }
+
+  .product-image {
+    background: $shade-placeholder-dark;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    display: none;
+    height: 300px;
+    object-fit: cover;
+    width: 100%;
+  }
+
+  .show { display: block; }
+
+
+  h4 {
+    color: $shade-details;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    margin-top: 10px;
+  }
+
+  .selected { box-shadow:inset 0px 0px 0px 5px $yellow; }
+
+  .product-sizes {
+    height: 50px;
+    margin-bottom: 30px;
+    width: 100%;
+    @include flex(row, space-between, center);
+
+    button {
+      background: $shade-placeholder-light;
+      border: none;
+      flex-grow: 1;
+      font-size: $font-medium;
+      font-weight: 600;
+      height: 100%;
+      
+      &:nth-child(2) { margin: 0 20px; }
+    }
+  }
+
+  .product-colors {
+    height: 50px;
+    width: 100%;
+    @include flex(row, space-between, center);
+
+    button {
+      border: none;
+      flex-grow: 1;
+      font-size: 0;
+      height: 100%;
+
+      &:nth-child(1), 
+      &:nth-child(2),
+      &:nth-child(3), { margin-right: 20px; }
+
+      &:nth-child(1) { background: $green; }
+      &:nth-child(2) { background: $red; }
+      &:nth-child(3) { background: $dark; }
+      &:nth-child(4) { background: $blue; }
+    }
+  }
+}

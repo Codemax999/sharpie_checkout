@@ -1,0 +1,30 @@
+.summary {
+  @extend %complete-summary;
+  @include mq(large) { width: calc(33.33% - 20px); } 
+
+  .final-err { 
+    height: 70px;
+    @include flex(column, center, center); 
+    
+    span {
+      color: $red;
+      font-size: $font-medium;
+      font-weight: 500;
+      height: 15px;
+      padding: 5px 0;
+      text-align: center;
+      width: 100%;
+    }
+  }
+
+  input {
+    color: $shade-light;
+    background: $green;
+    border: 0;
+    font-size: $font-medium;
+    height: 80px;
+    width: 100%;
+
+    &:disabled { background: $shade-placeholder-dark; }
+  }
+}

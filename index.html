@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Checkout</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet">
+  <link href="css/main.css" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Product -->
+  <section role="region" class="product">
+
+    <h1>Sharpie Markers</h1>
+    <img src="assets/img/sharpie_mini.jpg" alt="sharpie marker small" class="product-image small">
+    <img src="assets/img/sharpie_regular.jpg" alt="sharpie marker regular" class="product-image medium show">
+    <img src="assets/img/sharpie_large.jpg" alt="sharpie marker large" class="product-image large">
+    <h1>$20.00</h1>
+
+    <h4>Select a size</h4>    
+    <div class="product-sizes">
+      <button name="size small" id="btn-small">Small</button>
+      <button name="size medium" id="btn-medium">Medium</button>
+      <button name="size large" id="btn-large">Large</button>
+    </div>
+
+    <h4>Select a color</h4>
+    <div class="product-colors">
+      <button id="btn-green">color green</button>
+      <button id="btn-red">color red</button>
+      <button id="btn-black">color black</button>
+      <button id="btn-blue">color blue</button>
+    </div>
+  </section>
+
+  <!-- Shipping -->
+  <section role="region" class="shipping">
+
+    <h1>Shipping Details</h1>
+    <form name="orderForm" id="orderForm">
+
+      <!-- Name -->
+      <label for="name">Full Name</label>
+      <span id="err-name" aria-live="polite"></span>
+      <input id="name" type="text" name="name" aria-required="true">
+
+      <!-- Email -->
+      <label for="email">Email</label>
+      <span id="err-email" aria-live="polite"></span>
+      <input id="email" type="email" name="email" aria-required="true">
+
+      <!-- Address one and two -->
+      <div class="input-medium">
+        <div> 
+          <label for="address">Address</label>
+          <span id="err-address" aria-live="polite"></span>
+          <input id="address" type="text" name="address" aria-required="true">
+        </div>
+        <div>
+          <label for="addressTwo">Address 2</label>
+          <span></span>
+          <input id="addressTwo" type="text" name="addressTwo">
+        </div>
+      </div>
+
+      <!-- City State Zip -->
+      <div class="input-small">
+        <div>
+          <label for="city">City</label>
+          <span id="err-city" aria-live="polite"></span>
+          <input id="city" type="text" name="city" aria-required="true">
+        </div>
+        <div>
+          <label for="state">State</label>
+          <span id="err-state" aria-live="polite"></span>
+          <select id="state" name="state" aria-required="true"></select>
+        </div>
+        <div>
+          <label for="zip">Zip</label>
+          <span id="err-zip" aria-live="polite"></span>
+          <input id="zip" type="text" name="zip" aria-required="true">
+        </div>
+      </div>
+
+      <!-- Country -->
+      <label for="country">Country</label>
+      <span id="err-country" aria-live="polite"></span>
+      <select id="country" name="country" aria-required="true"></select>
+    </form>
+  </section>
+
+  <!-- Summary -->
+  <section role="region" class="summary">
+
+    <h1>Order Summary</h1>
+    <div class="summary-description">
+      <div>
+        <h4>Sharpie Markers</h4>
+        <h4 id="summary-size"></h4>
+        <h4 id="summary-color"></h4>
+      </div>
+      <h4>$20.00</h4>
+    </div>
+    <hr>
+    <div class="summary-description">
+      <h4>Shipping</h4>
+      <h4>Free</h4>
+    </div>
+    <div class="summary-description">
+      <h4>Total</h4>
+      <h4>$20.00</h4>
+    </div>
+    <hr>
+
+    <div class="summary-address">
+      <h4 class="summary-title">Shipping Address</h4>
+      <h4 id="summary-name"></h4>
+      <h4 id="summary-address"></h4>
+      <h4 id="summary-addressTwo"></h4>
+      <div class="summary-address-local">
+        <h4 id="summary-city"></h4>
+        <h4 id="summary-state"></h4>
+        <h4 id="summary-zip"></h4>
+      </div>
+    </div>
+
+    <div class="final-err">
+      <span id="err-size" aria-live="polite"></span>
+      <span id="err-color" aria-live="polite"></span>
+    </div>
+    <input id="submit" type="submit" form="orderForm" value="Complete Order" disabled>
+  </section>
+
+  <!-- Complete -->
+  <section role="region" class="complete hide">
+    <div class="complete-details">
+
+      <h1 class="complete-header">Order Completed</h1>
+      <h1>Order Summary</h1>
+
+      <div class="summary-description">
+        <div>
+          <h4>Sharpie Markers</h4>
+          <h4 id="summary-size2"></h4>
+          <h4 id="summary-color2"></h4>
+        </div>
+        <h4>$20.00</h4>
+      </div>
+
+      <hr>
+
+      <div class="summary-description">
+        <h4>Shipping</h4>
+        <h4>Free</h4>
+      </div>
+
+      <div class="summary-description">
+        <h4>Total</h4>
+        <h4>$20.00</h4>
+      </div>
+
+      <hr>
+
+      <div class="summary-address">
+        <h4 class="summary-title">Shipping Address</h4>
+        <h4 id="summary-name2"></h4>
+        <h4 id="summary-address2"></h4>
+        <h4 id="summary-addressTwo2"></h4>
+        <div class="summary-address-local">
+          <h4 id="summary-city2"></h4>
+          <h4 id="summary-state2"></h4>
+          <h4 id="summary-zip2"></h4>
+        </div>
+      </div>
+
+      <div class="complete-icon">
+        <img src="assets/icons/circle-check.svg" alt="Checkout complete icon">
+      </div>
+      
+    </div>
+  </section>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
